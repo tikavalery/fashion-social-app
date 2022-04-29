@@ -5,7 +5,7 @@ const User = mongoose.model("User")
 const crypto = require('crypto')
 const bcrypt = require('bcryptjs')
 const jwt = require('jsonwebtoken')
-const {JWT_SECRET} = require('../keys2')
+const JWT_SECRET = process.env.JWT_SECRET
 const requireLogin = require('../middleware/requireLogin')
 const nodemailer = require('nodemailer')
 const sendgridTransport = require('nodemailer-sendgrid-transport')
@@ -42,7 +42,7 @@ router.post('/signup',(req,res)=>{
                     to:user.email,
                     from:"tikavalery@gmail.com",
                     subject:"signup success",
-                    html:"<h1>welcome to instagram</h1>"
+                    html:"<h1>welcome Fashion Social</h1>"
                 })
                 res.json({message:"saved successfully"})
             })
@@ -96,22 +96,27 @@ router.post('/reset-password',(req,res)=>{
          User.findOne({email:req.body.email})
          .then(user=>{
              if(!user){
-                 return res.status(422).json({error:"User dont exists with that email"})
+                 return res.status(422).json({error:"User does not exists with that email"})
              }
              user.resetToken = token
              user.expireToken = Date.now() + 3600000
-             user.save().then((result)=>{
+             user.save().then((result) => {
+                 console.log("Yesssssssssss")
                  transporter.sendMail({
                      to:user.email,
-                     from:"no-replay@insta.com",
+                     from:"tikavalery@gmail.com",
                      subject:"password reset",
                      html:`
                      <p>You requested for password reset</p>
-                     <h5>click in this <a href="${EMAIL}/reset/${token}">link</a> to reset password</h5>
+                     <h5>click in this <a href="http://localhost:3000/reset/${token}">link</a> to reset password</h5>
                      `
                  })
                  res.json({message:"check your email"})
-             })
+             }).catch(err => {
+                 console.log(err)
+             }
+                 
+             )
 
          })
      })

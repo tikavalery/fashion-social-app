@@ -7,6 +7,7 @@ const path = require('path')
 
 
 const URI = process.env.MONGOURI
+
 //TjLuM6pCy9XHiHAm
 mongoose.connect(URI,{
     useNewUrlParser:true,

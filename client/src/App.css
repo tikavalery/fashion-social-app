@@ -34,7 +34,10 @@ a{
 }
 
 .item{
-  width: 30%;
+  width: 95%;
+  height: 90%;
+  justify-self: center;
+  align-items: center;
 }
 
 .home-card{

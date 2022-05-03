@@ -1,0 +1,41 @@
+.login-container{
+            width: 440px;
+						max-width: 36%;
+        }
+.bg-dark{
+  margin-bottom: -14px;
+}
+        .logo{
+            width: 100px;
+    margin-left: -17px;
+        }
+				.google-icon{
+					width: 25px;
+					height: 25px;
+					margin-top: -4px;
+				}
+				.w-33{
+					width: 32%;
+				}
+				.second-option{
+					font-size: 14px !important;
+				}
+        .rounded-lg{
+			border-radius: 14px !important;
+		}
+    .shadow-only-pc{
+      box-shadow: 0 1rem 3rem rgba(0,0,0,.175)!important;
+    }
+    @media screen and (max-width: 1080px) {
+			.shadow-only-pc{
+      box-shadow: none !important;
+    }
+    .w-33{
+					width: 0%;
+          display: none;
+				}
+        .login-container{
+            width: 100%;
+						max-width: 100%;
+        }
+		}

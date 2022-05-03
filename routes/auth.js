@@ -9,7 +9,8 @@ const JWT_SECRET = process.env.JWT_SECRET
 const requireLogin = require('../middleware/requireLogin')
 const nodemailer = require('nodemailer')
 const sendgridTransport = require('nodemailer-sendgrid-transport')
-const  SENDGR_API = process.env.SENDGR_API
+const SENDGR_API = process.env.SENDGR_API
+const EMAIL = process.env.EMAIL
 
 const transporter = nodemailer.createTransport(sendgridTransport({
     auth:{
@@ -108,7 +109,7 @@ router.post('/reset-password',(req,res)=>{
                      subject:"password reset",
                      html:`
                      <p>You requested for password reset</p>
-                     <h5>click in this <a href="http://localhost:3000/reset/${token}">link</a> to reset password</h5>
+                     <h5>click in this <a href="${EMAIL}/reset/${token}">link</a> to reset password</h5>
                      `
                  })
                  res.json({message:"check your email"})

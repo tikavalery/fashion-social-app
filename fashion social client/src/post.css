@@ -1,0 +1,149 @@
+.profile {
+			width: 35px;
+			border-radius: 50px;
+		}
+
+		.login-container {
+			width: 440px;
+			max-width: 33.3%;
+		}
+
+		.logo {
+			width: 100px;
+			margin-left: -17px;
+		}
+
+		.navigation-contain {
+			width: 90%;
+		}
+
+		.logo-contain {
+			width: 10%;
+		}
+
+		.navigation-items {
+			background-color: transparent;
+			padding: 7px 10px 7px 10px !important;
+			margin-right: 30px;
+			border: transparent;
+			border-radius: 4px;
+		}
+
+		.navigation-items:hover,
+		.navigation-items:focus {
+			background-color: #28a745;
+			outline: none !important;
+		}
+
+		.navigation-items-active {
+			background-color: #28a745;
+			padding: 7px 10px 7px 10px !important;
+			margin-right: 30px;
+			border: #28a745;
+			border-radius: 4px;
+		}
+
+		/* .navigation-items-active:hover, .navigation-items-active:focus{
+					background-color: #44b05d;
+					outline: none !important;
+				} */
+		.google-icon {
+			width: 25px;
+			height: 25px;
+			margin-top: -4px;
+		}
+
+		.w-33 {
+			width: 33.3%;
+		}
+
+		.second-option {
+			font-size: 14px !important;
+		}
+
+		.search-icon {
+			margin-left: -40px;
+			width: 18px;
+		}
+
+		.search-input {
+			width: 230px;
+		}
+
+		.drop-box {
+			background-color: #D9EEE9;
+			width: 360px;
+			border: 1px dashed #28a745
+		}
+
+		.main-container {
+			max-width: 1000px;
+			margin-right: auto;
+			margin-left: auto;
+		}
+
+		.w-full {
+			width: 350px !important;
+		}
+
+		.cursor-pointer {
+			cursor: pointer;
+		}
+
+		.post-container {
+			max-width: 560px;
+			margin-right: auto;
+			margin-left: auto;
+		}
+
+		.posts {
+			background: #EDEDED;
+			height: 370px;
+		}
+
+		.w-220 {
+			width: 220px !important;
+		}
+
+		.w-20 {
+			width: 16px;
+		}
+
+		.rounded-lg {
+			border-radius: 14px !important;
+		}
+
+		.shadow-only-pc {
+			box-shadow: 0 1rem 3rem rgba(0, 0, 0, .175) !important;
+		}
+		.x-icon{
+			width: 25px;
+		}
+		@media screen and (max-width: 1080px) {
+			.w-220 {
+				width: 100% !important;
+			}
+
+			.shadow-only-pc {
+				box-shadow: none !important;
+			}
+
+			.navigation-contain {
+				width: 100%;
+			}
+
+			.search-input {
+				width: 200px;
+			}
+			.nav-mobile{
+				display: block !important;
+				position: fixed !important;
+				background: white !important;
+				width: 40vw !important;
+				height: 100vh !important;
+				top: 0 !important;
+				padding-top: 10px !important;
+				box-shadow: 0 1rem 3rem rgba(0,0,0,.175)!important;
+				z-index: 50;
+			}
+		}

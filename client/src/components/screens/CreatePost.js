@@ -1,6 +1,10 @@
 import React,{useState,useEffect} from 'react'
 import M from 'materialize-css'
-import {useHistory} from 'react-router-dom'
+import { useHistory } from 'react-router-dom'
+import "./CreatePost.css";
+import createImage from "./assets/drop-img.png"
+
+
 const CretePost = ()=>{
     const history = useHistory()
     const [title,setTitle] = useState("")
@@ -58,44 +62,66 @@ const CretePost = ()=>{
    }
  
 
-   return(
-       <div className="card input-filed"
-       style={{
-           margin:"30px auto",
-           maxWidth:"500px",
-           padding:"20px",
-           textAlign:"center"
-       }}
-       >
-           <input 
-           type="text"
-            placeholder="title"
+    return (
+        <div>
+            <div>
+     
+	<div>
+		<h3 class="text-center pb-4 pt-2 font-weight-bold">Create Post</h3>
+		<div class="shadow-only-pc rounded-lg pt-3 pb-5 mb-5 px-sm-5 px-2 main-container">
+			<div class="d-sm-flex pb-4">
+				<div class="w-half">
+					<label class="w-100">
+                                   
+                                    <input type="file" class="sr-only"  onChange={(e)=>setImage(e.target.files[0])} />
+					<div class="drop-box rounded cursor-pointer d-flex justify-content-center py-sm-5 py-2">
+						<div>
+						<img src={createImage} class="pt-5" alt="" />
+						<p class="font-weight-bold text-center mt-4 pb-4">
+							Drop your photo/video<br />or <span class="text-success">Browse</span>
+						</p>
+						</div>
+						</div>
+					</label>
+				</div>
+				<div class="w-half pt-5 mt-3">
+					<div class="">
+						<div class="d-flex">
+							<div>
+								<img src="https://avatars.githubusercontent.com/u/53111214?v=4" class="profile mr-2" alt="" />
+							</div>
+                                        <div>
+                                            <input 
+                                                class="form-control mb-4 w-full"
+                                                type="text"
+                                                placeholder="Title of post" 
+            
             value={title}
             onChange={(e)=>setTitle(e.target.value)}
             />
-           <input
-            type="text"
-             placeholder="body"
-             value={body}
-            onChange={(e)=>setBody(e.target.value)}
-             />
-           <div className="file-field input-field">
-            <div className="btn #64b5f6 blue darken-1">
-                <span>Uplaod Image</span>
-                <input type="file" onChange={(e)=>setImage(e.target.files[0])} />
-            </div>
-            <div className="file-path-wrapper">
-                <input className="file-path validate" type="text" />
-            </div>
-            </div>
-            <button className="btn waves-effect waves-light #64b5f6 blue darken-1"
-            onClick={()=>postDetails()}
-            
-            >
-                Submit post
-            </button>
+                    
+                                            <textarea class="form-control w-full mb-4"
+                                                d="exampleFormControlTextarea1"
+                                                placeholder="Body" rows="8"
+                                                onChange={(e) => setBody(e.target.value)}
+                                                value={body}>
+                                            
+                                                </textarea>
+                                            <button type="submit" class="btn btn-success btn-block mb-3 py-2" onClick={() => postDetails()} >Upload</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+    </div>
+
+
 
        </div>
+
+       
    )
 }
 
